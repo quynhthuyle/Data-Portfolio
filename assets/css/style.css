@@ -167,6 +167,7 @@ nav ul li a:hover::after {
 /* --- 5.1 About Section --- */
 .about-content {
     display: flex;
+    flex-direction: row-reverse; /* Đảo ngược: ảnh phải, text trái */
     align-items: center;
     gap: 60px;
     max-width: 960px;
@@ -176,11 +177,13 @@ nav ul li a:hover::after {
 
 .profile-photo {
     width: 280px;
-    height: 280px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 7px solid var(--white-color);
+    border: 7px solid var(--grey-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Giữ kích thước ảnh cố định */
+
 }
 
 .about-text {
@@ -351,57 +354,101 @@ nav ul li a:hover::after {
 }
 
 /* --- 7. Contact Form --- */
-#contact .container {
-    max-width: 800px;
+/* Contact section */
+.contact-section {
+  text-align: center;
+  margin: 80px auto;
 }
 
-.contact-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--card-bg-color);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+.contact-section .section-title {
+  font-size: 2.6rem;
+  color: #1A2A4C;
+  margin-bottom: 0.5rem;
 }
 
-.form-group {
-    margin-bottom: 25px;
+.contact-underline {
+  width: 80px;
+  height: 3px;
+  background: #29B6F6;
+  margin: 0 auto 40px;
+  border-radius: 999px;
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 1rem;
-    color: var(--dark-text-color);
+/* Card khung trắng */
+.contact-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* Grid 2 cột cho email / phone */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(41, 182, 246, 0.25); /* Adjusted for new accent color */
+/* Từng item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 20px;
+  background: #f9fbff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-form button.btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    border: none;
-    cursor: pointer;
+.contact-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+/* Icon tròn */
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1A2A4C;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+/* Text */
+.contact-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.contact-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.contact-value:hover {
+  color: #29B6F6;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .contact-section .section-title {
+    font-size: 2rem;
+  }
 }
 
 /* --- 8. Footer --- */

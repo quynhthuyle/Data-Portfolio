@@ -1,13 +1,6 @@
 # **Le Thuy Quynh**
 **🌐 Portfolio:** https://quynhthuyle.github.io/Data-Portfolio/
 
-# **This Portfolio Template**
-This portfolio is designed to demonstrate my skills in:
-
--  
--  
--  
--  
 I am a four-year Data Science student with hands-on experience building end-to-end analytics and ETL pipelines using SQL, Python, Apache Airflow, and Power BI.
 
 **🚀 Projects**
